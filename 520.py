@@ -26,7 +26,7 @@ def excel_and_write():
 def getpic(path):
     f=open('test.txt','r+',encoding='utf-8')
     path=str(path)
-    alice_coloring = np.array(Image.open('5.png'))
+    alice_coloring = np.array(Image.open(path+'.png'))
     text=f.read()
     stopwords = set(STOPWORDS)
     stopwords.add("微笑")
@@ -37,10 +37,10 @@ def getpic(path):
     plt.imshow(wc)
     plt.axis("off")
     plt.show()
-    wc.to_file('5_x.png')
+    wc.to_file(path+'_x.png')
 
 if __name__ == '__main__':
 
-    #excel_and_write()
-    for x in [1,2,4]:
+    excel_and_write()
+    for x in [1,2,3]:
         getpic(x)
